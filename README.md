@@ -350,3 +350,45 @@
             }
 
             Console.ReadLine();
+            
+            
+            
+            
+            // mátrixot random elemekkel, transzponálja a program, (= a mátrix sorai és oszlopai helyet cserélnek) 
+
+            Console.Write("Adja meg hány dimenziós mátrixot szeretne: ");
+            int n = int.Parse(Console.ReadLine());
+
+            int[,] matrix = new int[n, n];
+            Random rnd = new Random();
+
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < n; j++)
+                {
+                    matrix[i, j] = rnd.Next(10,30);
+                }
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine();
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(matrix[i, j] + "  ");
+                }
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine();
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(matrix[j,i] + "  ");
+                }
+            }
+
+            Console.ReadLine();
+
