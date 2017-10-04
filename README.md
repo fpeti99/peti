@@ -391,4 +391,56 @@
             }
 
             Console.ReadLine();
+            
+            
+            
+            
+            
+            
+            
+            
+            // mátrixot random elemekkel, transzponálja a program ugy hogy nem négyzet alakú.
+
+            Console.Write("Adja meg hány soros mátrixot szeretne: ");
+            int n = int.Parse(Console.ReadLine());
+
+
+            Console.Write("Adja meg hány oszlopos mátrixot szeretne: ");
+            int m = int.Parse(Console.ReadLine());
+
+            int[,] matrix = new int[n, m];
+            int[,] transzp = new int[m, n];
+
+            Random rnd = new Random();
+
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < m; j++)
+                {
+                    matrix[i, j] = rnd.Next(10,30);
+                }
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine();
+                for (int j = 0; j < m; j++)
+                {
+                    Console.Write(matrix[i, j] + "  ");
+                    transzp[j, i] = matrix[i, j];
+                }
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < m; i++)
+            {
+                Console.WriteLine();
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(transzp[i,j] + "  ");
+                }
+            }
+
+            Console.ReadLine();
 
